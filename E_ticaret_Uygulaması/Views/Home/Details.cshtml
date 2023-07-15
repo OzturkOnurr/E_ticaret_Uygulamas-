@@ -1,0 +1,91 @@
+﻿@using E_ticaret_Uygulaması.Entity
+@model Product
+@{
+    ViewBag.Title = "Details";
+}
+<div id="product-details" class="container pb-5">
+    <div class="row">
+
+        <div class="col-md-6">
+            <img src="~/Upload/@Model.Image" class="img-responsive w-100 h-60">
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <br />
+                    <br />                    
+                    <span class="badge badge-primary">@Model.Name</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12"><br />
+                    @if (Model.IsApproved)
+                    {
+                        <span class="badge badge-primary">Stokta</span>
+                    }
+                    else
+                    {
+                        <span class="badge badge-danger">Stokta Yok</span>
+                    }
+                  
+                    <span class="product-number"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="description">
+                        <br /><br />
+                        <span class="badge badge-primary">Ürün Açıklaması</span>                        
+                        <br />
+                        <br />
+                        @Model.Description
+                    </div>
+                    <br /><br /><br />
+                    <div class="row">
+                        <div class="col-md-4">
+                            <i class="fa-solid fa-star fa-fw"></i>
+                            <i class="fa-solid fa-star fa-fw"></i>
+                            <i class="fa-solid fa-star fa-fw"></i>
+                            <i class="fa-solid fa-star fa-fw"></i>
+                            <i class="fa-solid fa-star-half-stroke fa-fw"></i>
+                            <span class="badge badge-danger"></span>
+                        </div>
+                        <div class="col-md-4">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 id="product price">@Model.Price TL </span>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+
+                        @using (Html.BeginForm("AddToCart","Cart"))
+                        {
+
+                            @Html.HiddenFor(i=>i.Id)//mmodel ıd gönderiyoruz controlıra
+                              <button type="submit" class="btn btn-success">
+                              <i class="fa-solid fa-cart-shopping fa-fw"></i>
+                                  Add To Cart
+                              </button>
+
+
+
+                        }
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    
+
+</div>
