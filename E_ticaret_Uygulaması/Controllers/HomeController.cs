@@ -16,7 +16,7 @@ namespace E_ticaret_Uygulaması.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var urunler= context.Products.Where(i=>i.IsHome && i.IsApproved).Select(i=> new ProductModel()
+            var urunler = context.Products.Where(i => i.IsHome && i.IsApproved).Select(i => new ProductModel()
             {
                 Id= i.Id,
                 Name= i.Name,
