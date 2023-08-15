@@ -18,7 +18,7 @@ namespace E_ticaret_Uygulaması.Models
         public string SurName { get; set; }
        
         [Required]
-        [DisplayName("Kullanıcı Adı")]
+       [DisplayName("Kullanıcı Adı")]
         public string UsurName { get; set; }
        
         [Required]
@@ -27,7 +27,7 @@ namespace E_ticaret_Uygulaması.Models
         public string Email { get; set; }
        
         [Required]
-        [DisplayName("Şifre")]
+       [DisplayName("Şifre")]
         public string Password { get; set; }
        
         [Required]

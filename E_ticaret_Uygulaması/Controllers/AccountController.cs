@@ -25,6 +25,12 @@ namespace E_ticaret_Uygulaması.Controllers
             var roleStore=new RoleStore<ApplicationRole>(new IdentityDataContext());
             RoleManager= new RoleManager<ApplicationRole>(roleStore);
         }
+
+        //public AccountController(RoleManager<ApplicationRole> roleManager)
+        //{
+        //    RoleManager = roleManager;
+        //}
+
         // GET: Account
         public ActionResult Register()
         {
